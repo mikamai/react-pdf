@@ -1,5 +1,4 @@
 import pick from 'lodash.pick';
-import merge from 'lodash.merge';
 import toPairsIn from 'lodash.topairsin';
 import isFunction from 'lodash.isfunction';
 
@@ -20,12 +19,16 @@ class Base extends Node {
 
     this.root = root;
     this.style = {};
-    this.props = merge(
-      {},
-      this.constructor.defaultProps,
-      Base.defaultProps,
-      props,
-    );
+    this.props = {
+      ...this.constructor.defaultProps,
+      ...Base.defaultProps,
+      ...props,
+      style: {
+        ...this.constructor.defaultProps.style,
+        ...Base.defaultProps.style,
+        ...props.style,
+      },
+    };
 
     warning(!this.props.styles, '"styles" prop passed instead of "style" prop');
   }
@@ -87,12 +90,16 @@ class Base extends Node {
   }
 
   update(newProps) {
-    this.props = merge(
-      {},
-      this.constructor.defaultProps,
-      Base.defaultProps,
-      newProps,
-    );
+    this.props = {
+      ...this.constructor.defaultProps,
+      ...Base.defaultProps,
+      ...newProps,
+      style: {
+        ...this.constructor.defaultProps.style,
+        ...Base.defaultProps.style,
+        ...props.style,
+      },
+    };
     this.root.markDirty();
   }
 

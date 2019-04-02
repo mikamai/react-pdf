@@ -1,3 +1,5 @@
+## THIS IS A FORK OF [react-pdf](https://github.com/diegomura/react-pdf)
+
 <p align="center">
   <img src="https://user-images.githubusercontent.com/5600341/27505816-c8bc37aa-587f-11e7-9a86-08a2d081a8b9.png" height="280px">
   <p align="center">React renderer for creating PDF files on the browser and server<p>
@@ -22,14 +24,14 @@
 
 ## How to install
 ```sh
-yarn add @react-pdf/renderer
+yarn add @mikamai-linkme/react-pdf
 ```
 
 ## How it works
 
 ```jsx
 import React from 'react';
-import { Document, Page, Text, View, StyleSheet } from '@react-pdf/renderer';
+import { Document, Page, Text, View, StyleSheet } from '@mikamai-linkme/react-pdf';
 
 // Create styles
 const styles = StyleSheet.create({
@@ -70,7 +72,7 @@ ReactDOM.render(<MyDocument />, document.getElementById('root'));
 ### `Node.` Save in a file
 ```jsx
 import React from 'react';
-import ReactPDF from '@react-pdf/renderer';
+import ReactPDF from '@mikamai-linkme/react-pdf';
 
 ReactPDF.render(<MyDocument />, `${__dirname}/example.pdf`);
 ```

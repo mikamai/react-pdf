@@ -1,10 +1,10 @@
 {
-  "name": "@react-pdf/renderer",
-  "version": "1.4.2",
+  "name": "@mikamai-linkme/react-pdf",
+  "version": "1.0.0",
   "license": "MIT",
   "author": "Diego Muracciole <diegomuracciole@gmail.com>",
-  "homepage": "https://github.com/diegomura/react-pdf#readme",
-  "repository": "git@github.com:diegomura/react-pdf.git",
+  "homepage": "https://github.com/mikamai/react-pdf#readme",
+  "repository": "git@github.com:mikamai/react-pdf.git",
   "main": "dist/react-pdf.cjs.js",
   "module": "dist/react-pdf.es.js",
   "browser": {
