@@ -15,8 +15,8 @@ const Document = 'DOCUMENT';
 const Canvas = 'CANVAS';
 
 const pdf = input => {
-  const container = createInstance({ type: 'ROOT' });
-  const mountNode = PDFRenderer.createContainer(container);
+  let container = createInstance({ type: 'ROOT' });
+  let mountNode = PDFRenderer.createContainer(container);
 
   if (input) updateContainer(input);
 
@@ -85,9 +85,17 @@ const pdf = input => {
     });
   }
 
+  function destroy() {
+    if (container && container.removeChild) container.removeChild();
+    if (container && container.instance) container.instance = null;
+    container = null;
+    mountNode = null;
+  }
+
   return {
     isDirty,
     updateContainer,
+    destroy,
     toBuffer,
     toBlob,
     toString,

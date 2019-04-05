@@ -329,6 +329,7 @@ declare module '@react-pdf/renderer' {
       document: React.ReactElement<DocumentProps>,
     ) => {
       isDirty: () => boolean;
+      destroy: () => void;
       updateContainer: (document: React.ReactElement<any>) => void;
       toBuffer: () => NodeJS.ReadableStream;
       toBlob: () => Promise<Blob>;
